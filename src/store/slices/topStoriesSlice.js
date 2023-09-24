@@ -8,6 +8,7 @@ const TopStoriesSlice = createSlice({
     name: 'TopStories',
     initialState: initialState,
     reducers: {
+        //The following is a reducer function used to update the stories stored inside the redux store
         setTopStories(state, action) {
             state.topStories = action.payload
         }

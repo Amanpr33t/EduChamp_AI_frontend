@@ -1,13 +1,21 @@
 
 import { Fragment } from "react"
 
+//This modal is used to provide a list of themes for the user to choose from
 function ThemeModal(props) {
+    /*
+    The component gets the following props:
+    1) themeSetter: A function used to select the theme chosen by the user
+    2)  showThemeModalSetter: A function used to close the modal when a user clicks outside the modal
+    3) theme: The theme selected by the user
+    4) storyGenerator: A function used to generate a story once a user has selected a theme
+    */
     const { themeSetter, showThemeModalSetter, theme, storyGenerator } = props
 
     return (
         <Fragment>
             <div className="z-30 fixed top-0 pb-4 w-full h-screen flex justify-center" onClick={showThemeModalSetter}>
-                <div className="p-3 mt-36 bg-gray-100 border border-gray-200 rounded-lg shadow mb-8 h-fit" onClick={e => e.stopPropagation()}>
+                <div className="p-3 mt-24 bg-white  border border-gray-200  rounded-lg shadow-xl mb-8 h-fit" onClick={e => e.stopPropagation()}>
                     <p className="text-lg font-semibold mb-2">Select a theme for the story</p>
                     <div>
                         <div className="flex items-center mb-1">

@@ -2,11 +2,20 @@
 import { Fragment } from "react"
 import { useNavigate } from "react-router-dom"
 
-function ModalAlert(props) {
+//This component provied us with a modal. It used to used alert messages to the user.
+function AlertModal(props) {
+    /* 
+    This component receives the following props:
+    1) message: Message to be shown to the user.
+    2) type: There are 2 type: 'warning' and 'success'
+    3) alertModalRemover: This function is used to remove the modal from the screen.
+    */
     const { message, type, alertModalRemover } = props
     const navigate = useNavigate()
+    
     const modalClose = () => {
         alertModalRemover()
+        //if type === 'success', it means that a story has been successfully saved to the database. We navigate to the home page.
         if (type === 'success') {
             navigate('/')
         }
@@ -18,13 +27,13 @@ function ModalAlert(props) {
                 <div className="relative w-11/12 sm:w-96 h-fit bg-white  rounded-lg shadow bg-slate-200" onClick={e => e.stopPropagation()}>
                     <button type="button" className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 " onClick={modalClose}>
                         <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                         </svg>
                         <span className="sr-only">Close modal</span>
                     </button>
                     <div className="p-6 text-center">
                         {type === 'warning' && <svg className="mx-auto mb-4 text-red-500 w-12 h-12 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>}
                         {type === 'success' && <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="mx-auto mb-4 text-green-700 w-12 h-12" viewBox="0 0 16 16">
                             <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
@@ -37,4 +46,4 @@ function ModalAlert(props) {
         </Fragment>
     )
 }
-export default ModalAlert
+export default AlertModal
