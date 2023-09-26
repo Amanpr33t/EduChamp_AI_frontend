@@ -14,7 +14,7 @@ function Navbar() {
                 <nav className=" flex flex-row justify-between items-center  h-16 w-full bg-white border-b shadow" >
                     <div className="flex flex-row pl-2 sm:pl-12">
                         <Link to='/' className='font-semibold text-3xl sm:text-4xl italic text-gray-600' >Story Sculptor </Link>
-                        <FaPen className="font-semibold text-3xl text-gray-600 mt-2"/>
+                        <FaPen role="svg" className="font-semibold text-3xl text-gray-600 mt-2"/>
                     </div>
                     {!isError && location.pathname !== '/form' && localStorage.getItem('email_AI_story') && <button type="button" className=" bg-blue-500 text-white font-semibold p-1.5 rounded-lg mr-2" onClick={() => {
                         localStorage.removeItem('email_AI_story')

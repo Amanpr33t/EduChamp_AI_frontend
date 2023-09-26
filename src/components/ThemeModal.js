@@ -42,9 +42,9 @@ function ThemeModal(props) {
                             <input name="theme" id="Suspense" type="radio" value="none" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer" onChange={e => themeSetter(e.target.value)} />
                             <label htmlFor="Suspense" className="ml-2 text-base font-medium text-gray-900 dark:text-gray-300">None</label>
                         </div>
-                        <div className='mt-2 flex justify-center'>
-                            <button type="button" className=" bg-blue-500 text-white font-medium p-1 rounded-lg" onClick={theme ? storyGenerator : null}>Search</button>
-                        </div>
+                    </div>
+                    <div className='mt-2 flex justify-center'>
+                        <button type="button" className=" bg-blue-500 text-white font-medium p-1 rounded-lg" onClick={theme ? storyGenerator : null}>Search</button>
                     </div>
                 </div>
             </div>

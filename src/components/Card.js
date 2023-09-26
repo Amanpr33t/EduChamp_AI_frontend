@@ -70,7 +70,7 @@ function Card(props) {
     return (
         <Fragment>
             < div key={story._id} className="relative w-11/12 sm:w-4/5 lg:w-3/4 p-6 bg-gray-100 rounded-lg shadow-2xl mb-16 ">
-                <p className="absolute left-0 -top-6 pl-1 pr-1 text-white font-semibold z-10 bg-rose-400 rounded-md">{story.theme.charAt(0).toUpperCase() + story.theme.slice(1)}</p>
+                {story.theme !== 'none' && <p className="absolute left-0 -top-6 pl-1 pr-1 text-white font-semibold z-10 bg-rose-400 rounded-md">{story.theme.charAt(0).toUpperCase() + story.theme.slice(1)}</p>}
 
                 <Link to="/" onClick={() => {
                     blurSetter()

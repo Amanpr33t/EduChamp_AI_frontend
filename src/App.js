@@ -4,7 +4,7 @@ import Leaderboard from './components/Leaderboard';
 import Home from './components/Home'
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom'
 import EmailForm from './components/EmailForm'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
 
@@ -17,15 +17,15 @@ function App() {
       navigate('/email')
     }
   }, [email, navigate])
-  
+
+
   return (
     <div className="box-border w-full min-h-screen">
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />}></Route>
+        <Route path='/' element={<Home  />}></Route>
         <Route path='/form' element={<StoryForm />}></Route>
         <Route path='/email' element={<EmailForm />}></Route>
-        <Route path='/leader_board' element={<Leaderboard />}></Route>
         <Route path='*' element={<Navigate replace to='/' />}></Route>
       </Routes>
     </div>
