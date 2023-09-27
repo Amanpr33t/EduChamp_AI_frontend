@@ -21,13 +21,27 @@ generates a short story based on that prompt
 - This is a responsive web application and is compatible with devices of all widths.
 
 
+## Workflow
+![Workflow](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/5a63b767-d530-49db-bfcc-3158eda18316)
+
+
+
 ## Demo video of the project
-
-
+![story_sculptor_gif](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/370d183e-25af-4289-a04f-d79ed493819c)
 
 
 ## Screenshots
+![Screenshot (1)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/1dc81777-0d33-44f2-819e-a16d4682e243)
 
+![Screenshot (2)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/2cae53de-ec12-49fb-b6d3-124ddeeae132)
+
+![Screenshot (3)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/6938f25c-e3dc-493c-8eaa-da09ebeafa84)
+
+![Screenshot (4)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/c4811542-3d64-4286-9145-25f41f861487)
+
+![Screenshot (5)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/3c9204ba-0fe4-4584-ab21-a9403f897638)
+
+![Screenshot (6)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/3fac1001-ad3f-483e-bdb2-2825b670a510)
 
 
 
