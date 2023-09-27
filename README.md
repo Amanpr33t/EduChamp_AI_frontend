@@ -27,11 +27,12 @@ generates a short story based on that prompt
 
 ## Screenshots
 ![Screenshot (1)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/1dc81777-0d33-44f2-819e-a16d4682e243)
+
+
+
+
+
 ![Screenshot (2)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/de607783-8407-4c0c-9135-49e56b18e123)
-![Screenshot (3)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/e1b12037-bbb8-4ab3-81ec-967f137454c9)
-![Screenshot (4)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/57800d68-bbac-4e31-81ac-854c1f068b72)
-![Screenshot (5)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/7b1805c8-81b9-4bea-8642-8ab56029282f)
-![Screenshot (6)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/18b77870-146b-45b6-a8f3-b3ef8b3403cc)
 
 
 ## Run Locally
