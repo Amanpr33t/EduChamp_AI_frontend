@@ -22,6 +22,7 @@ generates a short story based on that prompt
 
 
 ## Demo video of the project
+![story_sculptor_gif](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/370d183e-25af-4289-a04f-d79ed493819c)
 
 
 
@@ -30,6 +31,7 @@ generates a short story based on that prompt
 
 
 
+![Screenshot (1)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/1dc81777-0d33-44f2-819e-a16d4682e243)
 
 ## Run Locally
 
