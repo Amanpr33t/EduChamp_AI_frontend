@@ -10,7 +10,7 @@ describe("ViewStoryModal tests", () => {
     const blurFunction = jest.fn()
     let theme
 
-    test('These elements are rendered when theme is not none', () => {
+    test('These element are rendered when theme is not none', () => {
         theme = 'theme'
         render(<BrowserRouter> <Provider store={store}><ViewStoryModal blurFunction={blurFunction} prompt={prompt} story={story} theme={theme} /></Provider></BrowserRouter>)
 
