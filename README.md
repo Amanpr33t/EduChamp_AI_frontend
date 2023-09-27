@@ -30,11 +30,6 @@ generates a short story based on that prompt
 
 
 
-
-
-![Screenshot (2)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/de607783-8407-4c0c-9135-49e56b18e123)
-
-
 ## Run Locally
 
 Clone the project
