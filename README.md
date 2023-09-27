@@ -29,6 +29,9 @@ generates a short story based on that prompt
 ![Screenshot (1)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/1dc81777-0d33-44f2-819e-a16d4682e243)
 
 
+![Screenshot (2)](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/2cae53de-ec12-49fb-b6d3-124ddeeae132)
+
+
 
 ## Run Locally
 
