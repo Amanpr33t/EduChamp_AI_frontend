@@ -21,6 +21,11 @@ generates a short story based on that prompt
 - This is a responsive web application and is compatible with devices of all widths.
 
 
+## Workflow
+![Workflow](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/5a63b767-d530-49db-bfcc-3158eda18316)
+
+
+
 ## Demo video of the project
 ![story_sculptor_gif](https://github.com/Amanpr33t/EduChamp_AI_frontend/assets/114129054/370d183e-25af-4289-a04f-d79ed493819c)
 
