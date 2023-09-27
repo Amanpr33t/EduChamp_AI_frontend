@@ -8,6 +8,7 @@ import AlertModal from "./AlertModal";
 import { ErrorActions } from "../store/slices/errorSlice";
 import { useDispatch } from "react-redux";
 
+
 /*
 This component is our home page. It has the following functions:
 1) Its fetches all the stories saved in the database and shows them to the user by feeding each story to the Card component.
@@ -22,7 +23,7 @@ function Home(props) {
     const [topStories, setTopStories] = useState([]) // This state contains top 10 stories fetched most liked stories
     const [loading, setLoading] = useState(true) // This satte is used to set the loading spinner when our stories are being fetched from the database
     const [error, setError] = useState(false) // This state is used to show an error message when some error occurs while fetching stories.
-    
+
     const [singleStory, setSingleStory] = useState() // This state contains the story user wants to open in the ViesStoryModal
     const [alert, setAlert] = useState({
         isAlert: false,
@@ -54,7 +55,6 @@ function Home(props) {
                 throw new Error('Some error occured')
             }
             const data = await response.json()
-            console.log(data)
             if (data.status === 'ok') {
                 setAllStories(data.stories)
                 try {
@@ -87,6 +87,7 @@ function Home(props) {
             throw new Error('Some error occured')
         }
         const data = await response.json()
+        console.log(data)
         if (data.status === 'ok') {
             setTopStories(data.stories)
         } else {
@@ -132,16 +133,13 @@ function Home(props) {
             {/*ViewStoryModal is used to show a single story on which user has clicked */}
             {isBlur && !alert.isAlert && <ViewStoryModal blurSetter={() => setIsBlur(false)} prompt={singleStory.prompt} story={singleStory.story} theme={singleStory.theme} />}
 
-            {isLeaderBoardOnFullScreen && <Leaderboard blurSetter={() => setIsBlur(true)} topStories={topStories} singleStorySetter={(story) => setSingleStory(story)} setLeaderBoardOnFullScreen={() => setLeaderBoardOnFullScreen(false)} isLeaderBoardOnFullScreen={true} isBlur={isBlur}/>}
+            {isLeaderBoardOnFullScreen && <Leaderboard blurSetter={() => setIsBlur(true)} topStories={topStories} singleStorySetter={(story) => setSingleStory(story)} setLeaderBoardOnFullScreen={() => setLeaderBoardOnFullScreen(false)} isLeaderBoardOnFullScreen={true} isBlur={isBlur} />}
 
             {!isLeaderBoardOnFullScreen && <Fragment>
                 {/* AlertModal is used to show alert when the user clicks on the like button and some error occurs */}
                 {alert.isAlert && <AlertModal type={alert.type} message={alert.message} alertModalRemover={alertModalRemover} />}
 
-
-
-
-                {!isBlur && <div className='w-full z-20 bg-gray-100 fixed top-14 flex justify-start md:hidden gap-3 pt-4 pb-2 pl-2'>
+                {!error && !loading && <div className='w-full z-20 bg-gray-100 fixed top-14 flex justify-start md:hidden gap-3 pt-4 pb-2 pl-2'>
                     {/*The following button navigates the user to a form where the user can add get a new story from the openAi and then save it*/}
                     <button type="button" className=" bg-blue-500 text-white font-semibold p-1.5 rounded-lg flex flex-row gap-2" onClick={() => navigate('/form')}>Add Story</button>
                     {/*The following buttons is shown only on screens with width smaller than 768px. It routes the user to the a leaderBoard that shows top 10 stories */}
@@ -161,7 +159,7 @@ function Home(props) {
                     <div className="pt-36  md:w-2/3 lg:w-3/4 min-h-screen flex flex-col place-items-center">
                         {/*The following code is used to feed all to stories to the Card component */}
                         {allStories && allStories.length > 0 && allStories.map(story => {
-                            return <Card key={story._id} story={story} blurSetter={() => setIsBlur(true)} singleStorySetter={(data) => setSingleStory(data)} alertSetter={alertSetter} fetchTopStories={fetchTopStories} errorLoadingSetter={errorLoadingSetter} />
+                            return <Card key={story._id} story={story} blurSetter={() => setIsBlur(true)} singleStorySetter={(data) => setSingleStory(data)} alertSetter={alertSetter} fetchTopStories={fetchTopStories} errorLoadingSetter={errorLoadingSetter} role='card' />
                         })}
                     </div>
                 </div>}

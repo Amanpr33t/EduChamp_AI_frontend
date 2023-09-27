@@ -12,6 +12,7 @@ import AIResponseForm from "./AIResponseForm";
 function StoryForm() {
     const navigate = useNavigate()
     const [prompt, setPrompt] = useState('') //This state manages the prompt provided by the user
+    const [promptTooLongError, setPromptTooLongError] = useState(false)
     const [saveLoading, setSaveLoading] = useState(false) //This state manages the loading spinner present in the save button.
     const [allData, setAllData] = useState([]) //This state contains the story, and the successsive chain stories, generated bt openAI. It also stores the prompt provided by the user
     const [promiseResolved, setPromiseResolved] = useState(true) //When a user sends a request to a backend API, this state is set to false. It is set to true, if the promise is resolved or rejected
@@ -161,6 +162,9 @@ function StoryForm() {
         if (!prompt || !promiseResolved || saveLoading) {
             return
         }
+        if (prompt.trim().length > 150) {
+            return setPromptTooLongError(true)
+        }
         setShowThemeModal(true)
     }
 
@@ -184,13 +188,15 @@ function StoryForm() {
                 <div className="z-10 fixed  top-14 pb-4 w-full flex flex-col place-items-center">
                     <div className="w-full flex flex-row place-content-center">
                         <input className="w-10/12 sm:w-2/3 md:w-1/2 mt-4 h-14 pl-2 pr-10 border-2 border-gray-300 rounded-xl" type="text" id="prompt" name="prompt" placeholder='Enter story prompt' autoComplete="off" value={prompt} onChange={e => {
+                            setPromptTooLongError(false)
                             setPrompt(e.target.value.trimStart())
                         }} />
                         <FaSearch className=" fill-gray-400 text-4xl h-full mt-4 pl-1 pr-1 pb-2 pt-3 -ml-10 cursor-pointer" onClick={searchClick} />
                     </div>
                     {allData.length === 0 && <div className="pl-1 flex flex-row w-10/12 sm:w-2/3 md:w-1/2 mt-0.5 ">
-                        <p className="pr-2 font-medium text-gray-700">Hint:</p>
-                        <p className="text-gray-500">Once upon a time in a digital world...</p>
+                        {!promptTooLongError && <><p className="pr-2 font-medium text-gray-700">Hint:</p>
+                            <p className="text-gray-500">Once upon a time in a digital world...</p></>}
+                        {promptTooLongError && <p className="text-red-500">Warning:  Prompt cannot be longer than 150 characters.</p>}
                     </div>}
                 </div>
 

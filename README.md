@@ -1,70 +1,122 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Story Sculptor
 
-## Available Scripts
+It is an interactive web platform where users can provide a story prompt, and the AI
+generates a short story based on that prompt
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Client:** React, Redux, TailwindCSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Server:** Node, Express, MongoDB, LangChain
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- OpenAI generates a story based on a prompt and a theme provided by the user.
+- User can build a collaborative chain story by asking AI to refine the story furthur.
+- User can also like or unlike the stories.
+- A leaderboard shows the most liked stories.
+- This is a responsive web application and is compatible with devices of all widths.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo video of the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clone the project
 
-### Code Splitting
+```bash
+  git clone https://github.com/Amanpr33t/EduChamp_AI_frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Go to the project directory
 
-### Analyzing the Bundle Size
+```bash
+  cd EduChamp_AI_frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Install dependencies
 
-### Making a Progressive Web App
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the server
 
-### Advanced Configuration
+```bash
+  npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To run tests, run the following command
 
-### `npm run build` fails to minify
+```bash
+  npm run test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+REACT_APP_BACKEND_URL
+
+
+## Challenges faced
+
+ What challenges did I face while building this project?
+
+- I had to learn how to integrate openAI with my node.js backend server. I used LangChain to integrate both of them.
+- Generating a collaborative chain story with the AI was a challenge. I achieved this task by feeding the summary of the previously generated story to the AI as a reference for current story to be generated.
+- I had to face some challenges while writing the unit tests. I was not able to create a mock http request for the components that send http requests. I was also not able to integrate redux with the unit tests.
+
+
+## Scope of improvement
+
+- I have used two API for story generation.
+  
+  The first API is called when the user sends first request to AI for story generation.
+   
+  The second API is called for subsequent requests and is used for generating a collaborative chain story based on previously generated stories.
+
+  Instead of using two APIs and sending a summary of previously generated story to the AI, it would be better if the AI controls the chain story and remembers the previously generated story.
+
+ - Unit tests for components having http request and using states managed by react-redux have not been added. 
+
+
+
+## 🚀 About Me
+I'm a full stack developer. I posess the following skills:
+1) Frontend development:
+- React
+- Next.js
+- Tailwind CSS
+
+2) Backend development:
+- Node.js
+- Express
+- MongoDB
+- PostgreSQL
+
+3) Miscellaneos
+- Typescript
+- Git and Github
+- JavaScript
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at aman11865@hotmail.com
+

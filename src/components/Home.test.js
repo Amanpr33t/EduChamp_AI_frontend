@@ -4,15 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import React from "react";
 import store from '../store/store';
-
+import userEvent from '@testing-library/user-event'
 
 describe("Navbar tests", () => {
 
-
-    test('renders correctly', () => {
+    test('if data is fetched correctly', async() => {
         render(<BrowserRouter><Provider store={store}><Home /></Provider></BrowserRouter>)
-
-        const linkElement = screen.getByRole('link', { name: /story sculptor/i })
-        expect(linkElement).toBeInTheDocument()
+        const buttonElement = screen.getByRole('button', { name: /add story/i })
+        expect(buttonElement).toBeInTheDocument()
     })
 })

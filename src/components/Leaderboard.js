@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from "react"
-import { useNavigate, useLocation } from "react-router-dom"
+import { Fragment, useEffect } from "react"
+import { useNavigate} from "react-router-dom"
 import { FaHome } from "react-icons/fa"
 
 /*This component is used to show top 10 most liked stories to the user.
@@ -14,7 +14,7 @@ function Leaderboard(props) {
         if (topStories.length === 0) {
             navigate('/')
         }
-    }, [navigate])
+    }, [navigate,topStories.length])
 
     let index = 0 //This variable is used to add an index number to the top 10 stories
 
@@ -49,7 +49,7 @@ function Leaderboard(props) {
                 </div>}
 
                 <div className={`border-t-4 border-white pb-2 w-full text-center ${isLeaderBoardOnFullScreen ? 'pt-12 fixed top-16  z-40  bg-white' : 'pt-4 bg-gray-800'} `}>
-                    <h1 className={!isLeaderBoardOnFullScreen ? 'text-2xl font-semibold text-white' : 'text-3xl font-semibold text-gray-700'}>Top 10 Stories</h1>
+                    <h1 className={!isLeaderBoardOnFullScreen ? 'text-2xl font-semibold text-white' : 'text-3xl font-semibold text-gray-700'}>Top 5 Stories</h1>
                 </div>
 
                 <div className={isLeaderBoardOnFullScreen ? 'mt-20 sm:ml-0 sm:mr-0  w-11/12 sm:w-10/12 md:w-3/4 lg:w-2/3 pb-10 ' : 'h-full w-full overflow-y-auto overflow-x-hidden shadow-xl'}>
@@ -73,7 +73,7 @@ function Leaderboard(props) {
                                     })
                                 }}>
                                     {isLeaderBoardOnFullScreen && <td className="text-lg font-bold text-center pt-4 pb-4 pr-2">{index}</td>}
-                                    <td className={`text-lg font-medium ${isLeaderBoardOnFullScreen ? ' pl-1 sm:pl-2 sm:pr-2' : 'pr-1.5 pl-1.5  '}   pt-4 pb-4`}>{story.prompt} </td>
+                                    <td className={`text-lg font-medium ${isLeaderBoardOnFullScreen ? ' pl-1 sm:pl-2 sm:pr-2' : 'pr-1.5 pl-1.5  '}   pt-4 pb-4 `}>{story.prompt} </td>
                                     <td className="text-center text-lg font-semibold pt-6 pb-6">{votesSetter(story.upVotes.length)}</td>
                                 </tr>
                             })}

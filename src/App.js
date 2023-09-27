@@ -1,13 +1,11 @@
 import Navbar from './components/Navbar';
 import StoryForm from './components/StoryForm';
-import Leaderboard from './components/Leaderboard';
 import Home from './components/Home'
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom'
 import EmailForm from './components/EmailForm'
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 
 function App() {
-
   const navigate = useNavigate()
   let email = localStorage.getItem('email_AI_story')
 
