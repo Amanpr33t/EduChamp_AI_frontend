@@ -14,11 +14,11 @@ This component is our home page. It has the following functions:
 1) Its fetches all the stories saved in the database and shows them to the user by feeding each story to the Card component.
 2) For screen with width larger than 768px, it shows the leaderboard on the left side of the page. The leaderboard contains top 10 most liked stories.
 */
-function Home(props) {
+function Home() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [isBlur, setIsBlur] = useState(false) //This state is used too blur the background when we want to show the AlertModal component or the ViewStoryModal component.
-    const [isLeaderBoardOnFullScreen, setLeaderBoardOnFullScreen] = useState(false)
+    const [isLeaderBoardOnFullScreen, setLeaderBoardOnFullScreen] = useState(false) //This state is used to not show the leaderBoard on the home page when the screen has smaller width.
     const [allStories, setAllStories] = useState() // This state contains all the stories fetched from the database
     const [topStories, setTopStories] = useState([]) // This state contains top 10 stories fetched most liked stories
     const [loading, setLoading] = useState(true) // This satte is used to set the loading spinner when our stories are being fetched from the database
@@ -106,6 +106,7 @@ function Home(props) {
         setLoading(false)
         dispatch(ErrorActions.setError(true))
     }
+    
 
     return (
         <Fragment>

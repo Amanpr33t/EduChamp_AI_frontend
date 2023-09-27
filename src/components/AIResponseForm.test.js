@@ -10,7 +10,7 @@ describe("AIResponseForm tests", () => {
         fullStory: 'a story'
     }
 
-    test('renders HTML', () => {
+    test('Elements that are rendered initiallyL', () => {
         render(<BrowserRouter> <Provider store={store}><AIResponseForm item={item} /></Provider></BrowserRouter>);
 
         const paragraphElementYou = screen.getByText(/You/i)
@@ -23,14 +23,14 @@ describe("AIResponseForm tests", () => {
         expect(paragraphElementPrompt).toBeInTheDocument()
     })
 
-    test('paragrah element that shows story is rendered only when fullStory is present', () => {
+    test('Paragrah element that shows the story is rendered only when fullStory is present in props', () => {
         render(<BrowserRouter> <Provider store={store}><AIResponseForm item={item} /></Provider></BrowserRouter>);
 
         const paragraphElementStory = screen.getByText(/a story/i)
         expect(paragraphElementStory).toBeInTheDocument()
     })
 
-    test('paragrah element that shows story is not rendered when fullStory is not present', () => {
+    test('Paragrah element that shows the story is not rendered when fullStory is not present in props', () => {
         item.fullStory=''
         render(<BrowserRouter> <Provider store={store}><AIResponseForm item={item} /></Provider></BrowserRouter>);
 
@@ -38,7 +38,7 @@ describe("AIResponseForm tests", () => {
         expect(paragraphElementStory).not.toBeInTheDocument()
     })
     
-    test('div element with svg spinner is rendered when fullStory is not present', () => {
+    test('Div element with svg spinner is rendered when fullStory is not present in props', () => {
         item.fullStory=''
         render(<BrowserRouter> <Provider store={store}><AIResponseForm item={item} /></Provider></BrowserRouter>);
 
@@ -46,7 +46,7 @@ describe("AIResponseForm tests", () => {
         expect(paragraphElementStory).toBeInTheDocument()
     })
 
-    test('div element with svg spinner is not rendered when fullStory is present', () => {
+    test('Div element with svg spinner is not rendered when fullStory is present in props', () => {
         item.fullStory='a story'
         render(<BrowserRouter> <Provider store={store}><AIResponseForm item={item} /></Provider></BrowserRouter>);
 

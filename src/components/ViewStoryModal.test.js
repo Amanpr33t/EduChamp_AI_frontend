@@ -10,7 +10,7 @@ describe("ViewStoryModal tests", () => {
     const blurFunction = jest.fn()
     let theme
 
-    test('test when theme is not none', () => {
+    test('These elements are rendered when theme is not none', () => {
         theme = 'theme'
         render(<BrowserRouter> <Provider store={store}><ViewStoryModal blurFunction={blurFunction} prompt={prompt} story={story} theme={theme} /></Provider></BrowserRouter>)
 
@@ -24,7 +24,7 @@ describe("ViewStoryModal tests", () => {
         expect(buttonElement).toBeInTheDocument()
     })
 
-    test('test when theme is none', () => {
+    test('Paragrah element is not rendered when theme is none', () => {
         theme = 'none'
         render(<BrowserRouter> <Provider store={store}><ViewStoryModal blurFunction={blurFunction} prompt={prompt} story={story} theme={theme} /></Provider></BrowserRouter>)
         const paragraphElementTheme = screen.queryByText('Theme')

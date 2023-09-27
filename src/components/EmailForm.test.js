@@ -3,7 +3,7 @@ import EmailForm from './EmailForm';
 import { BrowserRouter } from 'react-router-dom';
 
 describe("EmailForm tests", () => {
-    test('renders correctly', () => {
+    test('These elements are rendered initially', () => {
         render(<BrowserRouter><EmailForm /></BrowserRouter>);
         const inputElement = screen.getByRole('textbox', { name: /email/i })
         expect(inputElement).toBeInTheDocument()

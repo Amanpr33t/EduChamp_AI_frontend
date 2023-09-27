@@ -6,10 +6,15 @@ import { FaHome } from "react-icons/fa"
   It get the following props:
   1) blurSetter: This function is used to blur the background when user clicks on a story in this component to open it in the ViesStoryModal component
   2) singleStorySetter: This function is run when the user clicks oa story. It is used to send data regarding the story to the ViewStoryModal component
-  3) topStories: Top 10 most liked stories*/
+  3) topStories: Top 10 most liked stories
+  4) setLeaderBoardOnscreen: This function is used to not show the leaderBoard on the home page when the screen has smaller width.
+  5) isLeaderBoardOnFullScreen: If it is true, then the leaderBoard is not shown on the home page, rather it is shown on the full screen
+  6) isBlur: If set to true, the LeaderBoard component will be blurred
+  */
 function Leaderboard(props) {
     const { blurSetter, topStories, singleStorySetter, setLeaderBoardOnFullScreen, isLeaderBoardOnFullScreen, isBlur } = props
     const navigate = useNavigate()
+
     useEffect(() => {
         if (topStories.length === 0) {
             navigate('/')
@@ -18,7 +23,7 @@ function Leaderboard(props) {
 
     let index = 0 //This variable is used to add an index number to the top 10 stories
 
-    // This function is used to manage the number of likes a story has. 
+    // This function is used to define how the number of likes stories have will be shown to the user. 
     const votesSetter = (votes) => {
         if (+votes >= 100000) {
             return `${(+votes / 1000000).toFixed(2)}m`
@@ -49,7 +54,7 @@ function Leaderboard(props) {
                 </div>}
 
                 <div className={`border-t-4 border-white pb-2 w-full text-center ${isLeaderBoardOnFullScreen ? 'pt-12 fixed top-16  z-40  bg-white' : 'pt-4 bg-gray-800'} `}>
-                    <h1 className={!isLeaderBoardOnFullScreen ? 'text-2xl font-semibold text-white' : 'text-3xl font-semibold text-gray-700'}>Top 5 Stories</h1>
+                    <h1 className={!isLeaderBoardOnFullScreen ? 'text-2xl font-semibold text-white' : 'text-3xl font-semibold text-gray-700'}>Top 10 Stories</h1>
                 </div>
 
                 <div className={isLeaderBoardOnFullScreen ? 'mt-20 sm:ml-0 sm:mr-0  w-11/12 sm:w-10/12 md:w-3/4 lg:w-2/3 pb-10 ' : 'h-full w-full overflow-y-auto overflow-x-hidden shadow-xl'}>

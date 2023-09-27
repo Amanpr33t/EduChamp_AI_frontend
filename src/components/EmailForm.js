@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { Fragment, useState } from "react"
 import * as EmailValidator from 'email-validator';
 
-// This component is used to get user email.
+// This component is used to get user email. This user email is used when the user likes or unlikes a story to store that like on the database. The email is used as a reference
 function EmailForm() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('') //This state stores the email that user types in the input box. 

@@ -9,7 +9,7 @@ describe("AlertModal tests", () => {
     let type='warning'
     const alertModalRemover=jest.fn()
     
-    test('renders HTML', () => {
+    test('These elements are rendered initially', () => {
         render(<BrowserRouter> <Provider store={store}><AlertModal message={message} type={type} alertModalRemover={alertModalRemover}/></Provider></BrowserRouter>);
 
         const buttonElementWithSVG = screen.getByRole('button', {  name: /close modal/i})
@@ -20,7 +20,7 @@ describe("AlertModal tests", () => {
     })
 
     
-    test('Button element has a text of cancel when type is warning', () => {
+    test('Button element has a text of cancel when the type prop has a value of warning', () => {
         type='warning'
         render(<BrowserRouter> <Provider store={store}><AlertModal message={message} type={type} alertModalRemover={alertModalRemover}/></Provider></BrowserRouter>);
 
@@ -29,7 +29,7 @@ describe("AlertModal tests", () => {
     })
 
     
-    test('Button element has a text of ok when type is success', () => {
+    test('Button element has a text of ok when the type props has a value of success', () => {
         type='success'
         render(<BrowserRouter> <Provider store={store}><AlertModal message={message} type={type} alertModalRemover={alertModalRemover}/></Provider></BrowserRouter>);
 

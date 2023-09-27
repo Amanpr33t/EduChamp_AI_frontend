@@ -9,7 +9,7 @@ import store from '../store/store';
 describe("Navbar tests", () => {
 
 
-    test('renders correctly', () => {
+    test('These elements are rendered initially', () => {
         render(<BrowserRouter><Provider store={store}><Navbar/></Provider></BrowserRouter>)
 
         const linkElement = screen.getByRole('link', { name: /story sculptor/i })

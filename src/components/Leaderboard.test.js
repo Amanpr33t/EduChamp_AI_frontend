@@ -17,7 +17,7 @@ describe("Leaderboard tests", () => {
         upVotes: ['abc@gmail.com']
     }]
 
-    test('LeaderBoard is on the full screen', () => {
+    test('Home button is rendered', () => {
         isLeaderBoardOnFullScreen = true
         render(<BrowserRouter><Leaderboard blurSetter={blurSetter} singleStorySetter={singleStorySetter} topStories={topStories} isBlur={isBlur} isLeaderBoardOnFullScreen={isLeaderBoardOnFullScreen} setLeaderBoardOnFullScreen={setLeaderBoardOnFullScreen} /></BrowserRouter>)
 
@@ -25,14 +25,14 @@ describe("Leaderboard tests", () => {
         expect(buttonHome).toBeInTheDocument()
     })
 
-    test('LeaderBoard is not on the full screen', () => {
+    test('Home button is not rendered', () => {
         isLeaderBoardOnFullScreen = false
         render(<BrowserRouter><Leaderboard blurSetter={blurSetter} singleStorySetter={singleStorySetter} topStories={topStories} isBlur={isBlur} isLeaderBoardOnFullScreen={isLeaderBoardOnFullScreen} setLeaderBoardOnFullScreen={setLeaderBoardOnFullScreen} /></BrowserRouter>)
 
         const buttonHome = screen.queryByRole('button', { name: /home/i })
         expect(buttonHome).not.toBeInTheDocument()
     })
-    test('Add Story button is visible', () => {
+    test('Add Story button is rendered', () => {
         isLeaderBoardOnFullScreen = false
         render(<BrowserRouter><Leaderboard blurSetter={blurSetter} singleStorySetter={singleStorySetter} topStories={topStories} isBlur={isBlur} isLeaderBoardOnFullScreen={isLeaderBoardOnFullScreen} setLeaderBoardOnFullScreen={setLeaderBoardOnFullScreen} /></BrowserRouter>)
 
@@ -40,7 +40,7 @@ describe("Leaderboard tests", () => {
         expect(buttonHome).toBeInTheDocument()
     })
 
-    test('Add Story button is not visible', () => {
+    test('Add Story button is not rendered', () => {
         isLeaderBoardOnFullScreen = true
         render(<BrowserRouter><Leaderboard blurSetter={blurSetter} singleStorySetter={singleStorySetter} topStories={topStories} isBlur={isBlur} isLeaderBoardOnFullScreen={isLeaderBoardOnFullScreen} setLeaderBoardOnFullScreen={setLeaderBoardOnFullScreen} /></BrowserRouter>)
 
@@ -48,14 +48,14 @@ describe("Leaderboard tests", () => {
         expect(buttonHome).not.toBeInTheDocument()
     })
 
-    test('Table body row is not visible', () => {
+    test('Table body row is not rendered', () => {
         topStories = []
         render(<BrowserRouter><Leaderboard blurSetter={blurSetter} singleStorySetter={singleStorySetter} topStories={topStories} isBlur={isBlur} isLeaderBoardOnFullScreen={isLeaderBoardOnFullScreen} setLeaderBoardOnFullScreen={setLeaderBoardOnFullScreen} /></BrowserRouter>)
 
         const tableBodyRowElement = screen.queryByRole('row', { name: /a prompt/i })
         expect(tableBodyRowElement).not.toBeInTheDocument()
     })
-    test('Table body row is visible', () => {
+    test('Table body row is rendered', () => {
         topStories = [{
             _id: '1',
             prompt: 'a prompt',
@@ -69,7 +69,7 @@ describe("Leaderboard tests", () => {
         expect(tableBodyRowElement).toBeInTheDocument()
     })
 
-    test('Elements that are always visible', () => {
+    test('Elements that are always rendered', () => {
         render(<BrowserRouter><Leaderboard blurSetter={blurSetter} singleStorySetter={singleStorySetter} topStories={topStories} isBlur={isBlur} isLeaderBoardOnFullScreen={isLeaderBoardOnFullScreen} setLeaderBoardOnFullScreen={setLeaderBoardOnFullScreen} /></BrowserRouter>)
 
         const headingElement = screen.getByRole('heading', { name: /top 10 stories/i })
