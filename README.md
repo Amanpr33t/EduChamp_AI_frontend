@@ -93,7 +93,7 @@ REACT_APP_BACKEND_URL
  What challenges did I face while building this project?
 
 - I had to learn how to integrate openAI with my node.js backend server. I used LangChain to integrate both of them.
-- Generating a collaborative chain story with the AI was a challenge. I achieved this task by feeding the summary of the previously generated story to the AI as a reference for current story to be generated.
+- Generating a collaborative chain story with the openAI was a challenge. I achieved this task by feeding the summary of the previously generated story to the AI as a reference for current story to be generated. I did this so as to use minimum number of tokens while interacting with openAI.
 - I had to face some challenges while writing the unit tests. I was not able to create a mock http request for the components that send http requests. I was also not able to integrate redux with the unit tests.
 
 
@@ -105,7 +105,7 @@ REACT_APP_BACKEND_URL
    
   The second API is called for subsequent requests and is used for generating a collaborative chain story based on previously generated stories.
 
-  Instead of using two APIs and sending a summary of previously generated story to the AI, it would be better if the AI controls the chain story and remembers the previously generated story.
+  Instead of using two APIs and sending a summary of previously generated story to the AI, it would be better if the AI controls the chain story and remembers the previously generated story. But it increases the number of tokens being consumed.
 
  - Unit tests for components having http request and using states managed by react-redux have not been added. 
 
