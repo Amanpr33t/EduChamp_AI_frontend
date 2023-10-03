@@ -65,7 +65,7 @@ function ThemeModal(props) {
                     <label htmlFor="themeInput" className="text-lg font-semibold mb-1">Add your own theme</label>
                     <input className="w-64  border-2 border-gray-400 rounded-md p-1" type="text" id="themeInput" name="themeInput" placeholder='Enter a theme...' autoComplete="off" value={theme} onChange={e => themeSetter(e.target.value.trimStart())} />
                     <div className='mt-4 flex justify-center'>
-                        <button type="button" className=" bg-blue-500 text-white font-medium p-1 rounded-lg" onClick={theme ? storyGenerator : null} >Search</button>
+                        <button type="submit" className=" bg-blue-500 text-white font-medium p-1 rounded-lg" onClick={theme ? storyGenerator : null} >Search</button>
                     </div>
                 </form>}
             </div>

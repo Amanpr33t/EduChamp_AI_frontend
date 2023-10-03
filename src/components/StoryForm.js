@@ -191,7 +191,7 @@ function StoryForm() {
                             setPromptTooLongError(false)
                             setPrompt(e.target.value.trimStart())
                         }} />
-                        <FaSearch className=" fill-gray-400 text-4xl h-full mt-4 pl-1 pr-1 pb-2 pt-3 -ml-10 cursor-pointer" onClick={searchClick} />
+                        <FaSearch role="searchButton" className=" fill-gray-400 text-4xl h-full mt-4 pl-1 pr-1 pb-2 pt-3 -ml-10 cursor-pointer" onClick={searchClick} />
                     </div>
                     {allData.length === 0 && <div className="pl-1 flex flex-row w-10/12 sm:w-2/3 md:w-1/2 mt-0.5 ">
                         {!promptTooLongError && <><p className="pr-2 font-medium text-gray-700">Hint:</p>

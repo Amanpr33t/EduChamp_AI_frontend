@@ -1,16 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import Navbar from './Navbar';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import React from "react";
-import store from '../store/store';
-
+import { render , screen } from '@testing-library/react'
+import Navbar from './Navbar'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import React from "react"
+import store from '../store/store'
 
 describe("Navbar tests", () => {
 
-
     test('These elements are rendered initially', () => {
-        render(<BrowserRouter><Provider store={store}><Navbar/></Provider></BrowserRouter>)
+        render(<BrowserRouter> <Provider store={store}><Navbar /></Provider></BrowserRouter>)
 
         const linkElement = screen.getByRole('link', { name: /story sculptor/i })
         expect(linkElement).toBeInTheDocument()

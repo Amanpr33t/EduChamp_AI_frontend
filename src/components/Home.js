@@ -8,7 +8,6 @@ import AlertModal from "./AlertModal";
 import { ErrorActions } from "../store/slices/errorSlice";
 import { useDispatch } from "react-redux";
 
-
 /*
 This component is our home page. It has the following functions:
 1) Its fetches all the stories saved in the database and shows them to the user by feeding each story to the Card component.
@@ -87,7 +86,6 @@ function Home() {
             throw new Error('Some error occured')
         }
         const data = await response.json()
-        console.log(data)
         if (data.status === 'ok') {
             setTopStories(data.stories)
         } else {
@@ -106,11 +104,10 @@ function Home() {
         setLoading(false)
         dispatch(ErrorActions.setError(true))
     }
-    
+
 
     return (
         <Fragment>
-
             {/*The following code is used to show a spinner when the stories are being fetched from the database */}
             {!error && loading &&
                 < div className="fixed top-40 w-full flex justify-center" >

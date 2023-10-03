@@ -10,7 +10,7 @@ describe("AIResponseForm tests", () => {
         fullStory: 'a story'
     }
 
-    test('Elements that are rendered initiallyL', () => {
+    test('Elements that are rendered initially', () => {
         render(<BrowserRouter> <Provider store={store}><AIResponseForm item={item} /></Provider></BrowserRouter>);
 
         const paragraphElementYou = screen.getByText(/You/i)
