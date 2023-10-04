@@ -131,7 +131,7 @@ function Home() {
             {/*ViewStoryModal is used to show a single story on which user has clicked */}
             {isBlur && !alert.isAlert && <ViewStoryModal blurSetter={() => setIsBlur(false)} prompt={singleStory.prompt} story={singleStory.story} theme={singleStory.theme} />}
 
-            {isLeaderBoardOnFullScreen && <Leaderboard blurSetter={() => setIsBlur(true)} topStories={topStories} singleStorySetter={(story) => setSingleStory(story)} setLeaderBoardOnFullScreen={() => setLeaderBoardOnFullScreen(false)} isLeaderBoardOnFullScreen={true} isBlur={isBlur} />}
+            {isLeaderBoardOnFullScreen && <Leaderboard  blurSetter={() => setIsBlur(true)} topStories={topStories} singleStorySetter={(story) => setSingleStory(story)} setLeaderBoardOnFullScreen={() => setLeaderBoardOnFullScreen(false)} isLeaderBoardOnFullScreen={true} isBlur={isBlur} />}
 
             {!isLeaderBoardOnFullScreen && <Fragment>
                 {/* AlertModal is used to show alert when the user clicks on the like button and some error occurs */}
@@ -151,7 +151,7 @@ function Home() {
                 {!error && !loading && <div className={`flex justify-center md:flex-row ${isBlur || alert.isAlert ? 'blur' : ''} bg-gray-100`} onClick={alertModalRemover}>
 
                     {/*The LeaderBoard component is used to show the top 10 stories to the user */}
-                    <Leaderboard blurSetter={() => setIsBlur(true)} topStories={topStories} singleStorySetter={(story) => setSingleStory(story)} isLeaderBoardOnFullScreen={false} />
+                    <Leaderboard  blurSetter={() => setIsBlur(true)} topStories={topStories} singleStorySetter={(story) => setSingleStory(story)} isLeaderBoardOnFullScreen={false} />
 
                     <div className="  w-1/3 lg:w-1/4  h-screen "></div>
                     <div className="pt-36  md:w-2/3 lg:w-3/4 min-h-screen flex flex-col place-items-center">

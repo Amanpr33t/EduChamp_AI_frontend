@@ -1,5 +1,5 @@
 import { Fragment, useEffect } from "react"
-import { useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { FaHome } from "react-icons/fa"
 
 /*This component is used to show top 10 most liked stories to the user.
@@ -12,14 +12,14 @@ import { FaHome } from "react-icons/fa"
   6) isBlur: If set to true, the LeaderBoard component will be blurred
   */
 function Leaderboard(props) {
-    const { blurSetter, topStories, singleStorySetter, setLeaderBoardOnFullScreen, isLeaderBoardOnFullScreen, isBlur } = props
+    const { blurSetter, topStories, singleStorySetter, setLeaderBoardOnFullScreen, isLeaderBoardOnFullScreen, isBlur} = props
     const navigate = useNavigate()
 
     useEffect(() => {
         if (topStories.length === 0) {
             navigate('/')
         }
-    }, [navigate,topStories.length])
+    }, [navigate, topStories.length])
 
     let index = 0 //This variable is used to add an index number to the top 10 stories
 
@@ -38,7 +38,7 @@ function Leaderboard(props) {
             {/*ViewStoryModal is used to show a single story on which user has clicked */}
 
 
-            <div className={`${isBlur?'blur':''} ${isLeaderBoardOnFullScreen ? 'w-full pt-20  flex justify-center' : ' hidden md:flex flex-col place-items-center w-1/3 lg:w-1/4  pt-16  h-screen fixed top-0 left-0   z-40'} `}>
+            <div  className={`${isBlur ? 'blur' : ''} ${isLeaderBoardOnFullScreen ? 'w-full pt-20  flex justify-center' : ' hidden md:flex flex-col place-items-center w-1/3 lg:w-1/4  pt-16  h-screen fixed top-0 left-0   z-40'} `}>
 
                 {/*The following button when clicked, takes the user to the home page */}
                 {isLeaderBoardOnFullScreen && <button type="button" className="z-50 w-fit fixed top-16 left-2 bg-blue-500  mt-2 md:mt-2   text-white font-medium p-1 rounded-lg flex flex-row gap-2" onClick={() => {

@@ -7,11 +7,11 @@ import store from '../store/store';
 import userEvent from '@testing-library/user-event'
 import { server } from '../mocks/server'
 import { rest } from 'msw';
-
+import { act } from 'react-dom/test-utils';
 
 describe("Home tests", () => {
 
-    test('fetch data', async () => {
+    test('When data has been successfully fetched initially', async () => {
         render(<BrowserRouter> <Provider store={store}><Home /></Provider></BrowserRouter>)
 
         const storyElement = await screen.findByText(/a story/i)
@@ -20,6 +20,7 @@ describe("Home tests", () => {
         const leaderboardTableElement = await screen.findByRole('row', { name: /a prompt 1/i })
         expect(leaderboardTableElement).toBeInTheDocument();
     })
+
 
     test('error handling', async () => {
         server.use(
@@ -34,4 +35,5 @@ describe("Home tests", () => {
         const errorElement = await screen.findByText(/Some error occured./i)
         expect(errorElement).toBeInTheDocument();
     })
+
 })
